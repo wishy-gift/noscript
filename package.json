@@ -1,0 +1,32 @@
+{
+	"name": "@wishy-gift/noscript",
+	"version": "0.0.1",
+	"description": "A small collection of utils for creating web apps that work without javascript",
+	"scripts": {
+		"prepare": "tsc",
+		"watch": "tsc -w"
+	},
+	"files": [
+		"dist",
+		"src"
+	],
+	"keywords": [
+		"noscript",
+		"react",
+		"redux"
+	],
+	"author": "Daniel Skogly (daniel@wishy.gift)",
+	"license": "MIT",
+	"devDependencies": {
+		"prettier": "2.3.2",
+		"typescript": "^4.4.2"
+	},
+	"peerDependencies": {
+		"@reduxjs/toolkit": "^1.6.1",
+		"form-serialization": "^0.11.0",
+		"qs": "^6.10.1",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-redux": "^7.2.4"
+	}
+}
