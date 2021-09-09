@@ -34,7 +34,16 @@ const Form = ({
 
 	const actionCreatorName = useMemo(() => {
 		if (typeof actionCreator === 'function') {
-			return getActionCreatorName(actionCreator);
+			const actionCreatorFunction = getActionCreatorName(actionCreator);
+
+			if (!actionCreatorFunction) {
+				console.warn(
+					`Couldn't find actionCreatorFunction. Did you forget to register it with addActionCreators?`,
+					actionCreator
+				);
+			}
+
+			return actionCreatorFunction;
 		}
 
 		return actionCreator;
