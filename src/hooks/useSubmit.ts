@@ -23,14 +23,14 @@ export default function useSubmit<FormElement = HTMLFormElement>(
 
 			// This allows the `type` to be dependent on the button clicked
 			// NOTE: `submitter` is not supported in IE or Safari
-			let type = formData.type;
+			let actionType = formData.actionType;
 
 			const submitter = event.nativeEvent.submitter as
 				| HTMLButtonElement
 				| HTMLInputElement;
 
-			if (!type && submitter) {
-				type = submitter.value;
+			if (!actionType && submitter) {
+				actionType = submitter.value;
 			}
 			const actionCreatorName = formData.actionCreatorName;
 
@@ -59,9 +59,9 @@ export default function useSubmit<FormElement = HTMLFormElement>(
 				}
 
 				dispatch(actionCreator(payload));
-			} else if (type) {
+			} else if (actionType) {
 				dispatch({
-					type,
+					type: actionType,
 					payload,
 				});
 			} else {

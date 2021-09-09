@@ -1,7 +1,20 @@
-import React from 'react';
-import { node, string, shape, func, any, oneOfType } from 'prop-types';
+import React, { ReactNode } from 'react';
 
 import Form from './Form';
+
+interface ButtonProps {
+	wrapperClassName?: string;
+	wrapperParams?: object;
+	className?: string;
+	action: {
+		type: string;
+		payload?: any;
+	};
+	actionCreator: string | Function;
+	payload: any;
+	children: ReactNode;
+	onSubmit: Function;
+}
 
 const Button = ({
 	wrapperClassName,
@@ -12,7 +25,7 @@ const Button = ({
 	onSubmit,
 	wrapperParams = {},
 	...params
-}) => {
+}: ButtonProps) => {
 	const resultPayload = payload ?? action?.payload;
 
 	return (
@@ -34,18 +47,6 @@ const Button = ({
 			<button {...params}>{children}</button>
 		</Form>
 	);
-};
-
-Button.propTypes = {
-	wrapperClassName: string,
-	className: string,
-	action: shape({
-		type: string.isRequired,
-	}),
-	actionCreator: oneOfType([string, func]),
-	payload: any,
-	children: node,
-	onSubmit: func,
 };
 
 export default Button;

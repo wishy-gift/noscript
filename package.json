@@ -1,10 +1,19 @@
 {
 	"name": "@wishy-gift/noscript",
 	"version": "0.0.1",
+	"private": false,
 	"description": "A small collection of utils for creating web apps that work without javascript",
 	"scripts": {
 		"prepare": "tsc",
-		"watch": "tsc -w"
+		"watch": "tsc -w",
+		"release": "standard-version"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wishy-gift/noscript.git"
+	},
+	"bugs": {
+		"url": "https://github.com/wishy-gift/noscript/issues"
 	},
 	"files": [
 		"dist",
@@ -15,16 +24,20 @@
 		"react",
 		"redux"
 	],
-	"author": "Daniel Skogly (daniel@wishy.gift)",
+	"author": "Daniel Skogly <daniel@wishy.gift> (https://wishy.gift)",
 	"license": "MIT",
+	"dependencies": {
+		"qs": "^6.10.1"
+	},
 	"devDependencies": {
+		"@types/qs": "^6.9.7",
 		"prettier": "2.3.2",
+		"standard-version": "^9.3.1",
 		"typescript": "^4.4.2"
 	},
 	"peerDependencies": {
 		"@reduxjs/toolkit": "^1.6.1",
 		"form-serialization": "^0.11.0",
-		"qs": "^6.10.1",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"react-redux": "^7.2.4"

@@ -35,6 +35,7 @@ const handleServerActions = async ({
 			data = qs.parse(bufferString);
 		} catch (error) {
 			console.error(`Couldn't parse bufferString`, bufferString);
+			throw new Error(`Couldn't parse bufferString`);
 		}
 	} else {
 		throw new Error(
@@ -48,7 +49,7 @@ const handleServerActions = async ({
 	let payload, state;
 
 	try {
-		state = data.state ? JSON.parse(data.state) : {};
+		state = typeof data.state === 'string' ? JSON.parse(data.state) : {};
 
 		switch (payloadType) {
 			case 'string':

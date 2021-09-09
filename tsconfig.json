@@ -5,12 +5,14 @@
 		"outDir": "dist",
 		"target": "esnext",
 		"lib": ["esnext", "dom"],
-		"module": "esnext",
+		"module": "commonjs",
 		"experimentalDecorators": true,
 		"sourceMap": true,
 		"declaration": true,
+		"strict": true,
 		"jsx": "react",
 		"esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
 		"moduleResolution": "node"
-	}
+	},
+	"exclude": ["node_modules", "dist"]
 }

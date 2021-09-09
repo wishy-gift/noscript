@@ -1,4 +1,4 @@
-const getPayloadProxy = (prev = '') =>
+const getPayloadProxy = (prev = ''): {} =>
 	new Proxy(
 		{},
 		{
