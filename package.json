@@ -1,6 +1,6 @@
 {
 	"name": "@wishy-gift/noscript",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"private": false,
 	"description": "A small collection of utils for creating web apps that work without javascript",
 	"scripts": {
