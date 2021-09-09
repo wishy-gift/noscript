@@ -10,7 +10,7 @@ export default function useSubmit<FormElement = HTMLFormElement>(
 	const dispatch = useDispatch();
 
 	const handleSubmit = useCallback(
-		(event: React.SyntheticEvent<FormElement, SubmitEvent>) => {
+		async (event: React.SyntheticEvent<FormElement, SubmitEvent>) => {
 			// If this runs, we're client side and want to update things there instead of doing the POST request
 			event.preventDefault();
 
@@ -58,7 +58,7 @@ export default function useSubmit<FormElement = HTMLFormElement>(
 					);
 				}
 
-				dispatch(actionCreator(payload));
+				await dispatch(actionCreator(payload));
 			} else if (actionType) {
 				dispatch({
 					type: actionType,
