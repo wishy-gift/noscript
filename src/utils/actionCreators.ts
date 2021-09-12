@@ -8,16 +8,16 @@ type SimpleActionCreator = Function & {
 type FuncMap = Record<string, SimpleActionCreator>;
 
 export const addActionCreators = (funcMap: FuncMap) => {
-	Object.entries(funcMap).map(([funcName, func]) => {
+	for (const [funcName, func] of Object.entries(funcMap)) {
 		const resultFuncName = func.typePrefix || funcName;
 
 		functionNames.push(resultFuncName);
 		functions.push(func);
-	});
+	}
 };
 
-export const getActionCreator = (func: string) => {
-	const funcIndex = functionNames.indexOf(func);
+export const getActionCreator = (funcName: string) => {
+	const funcIndex = functionNames.indexOf(funcName);
 
 	return functions[funcIndex];
 };
