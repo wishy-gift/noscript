@@ -5,12 +5,12 @@ import useSubmit from '../hooks/useSubmit';
 import { getActionCreatorName } from '../utils/actionCreators';
 
 interface FormProps {
-	actionType: string;
-	actionCreator: string | Function;
+	actionType?: string;
+	actionCreator?: string | Function;
 	children: ReactNode;
 	className?: string;
-	onSubmit: Function;
-	payloadType: 'string' | 'object' | 'json';
+	onSubmit?: Function;
+	payloadType?: 'string' | 'object' | 'json';
 }
 
 const Form = ({

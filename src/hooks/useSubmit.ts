@@ -5,7 +5,7 @@ import { serialize } from 'form-serialization';
 import { getActionCreator } from '../utils/actionCreators';
 
 export default function useSubmit<FormElement = HTMLFormElement>(
-	onSubmit: Function
+	onSubmit?: Function
 ) {
 	const dispatch = useDispatch();
 
