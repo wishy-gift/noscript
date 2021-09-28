@@ -84,7 +84,7 @@ const handleServerActions = async ({
 
 	return {
 		reduxStore,
-		preloadedState: reduxStore.getState(),
+		state: reduxStore.getState(),
 	};
 };
 
