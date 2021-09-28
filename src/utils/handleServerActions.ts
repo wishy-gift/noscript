@@ -13,13 +13,13 @@ type Data = {
 
 type ServerActionsParams = {
 	data: Data;
-	bufferString: string;
+	rawBody: string;
 	getReduxStore: (state: any) => ReturnType<typeof configureStore>;
 };
 
 const handleServerActions = async ({
 	data: preParsedData, // if pre-parsed
-	bufferString, // if not pre-parsed
+	rawBody, // if not pre-parsed
 	getReduxStore,
 }: ServerActionsParams) => {
 	if (typeof getReduxStore !== 'function') {
@@ -30,16 +30,16 @@ const handleServerActions = async ({
 	let data;
 	if (preParsedData) {
 		data = preParsedData;
-	} else if (bufferString) {
+	} else if (rawBody) {
 		try {
-			data = qs.parse(bufferString);
+			data = qs.parse(rawBody);
 		} catch (error) {
-			console.error(`Couldn't parse bufferString`, bufferString);
-			throw new Error(`Couldn't parse bufferString`);
+			console.error(`Couldn't parse rawBody`, rawBody);
+			throw new Error(`Couldn't parse rawBody`);
 		}
 	} else {
 		throw new Error(
-			`Pre-parsed data or bufferString is required for handleServerActions`
+			`Pre-parsed data or rawBody is required for handleServerActions`
 		);
 	}
 
