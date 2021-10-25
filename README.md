@@ -93,17 +93,17 @@ Note: You cannot specify both `actionType` AND `actionCreator`, but you can also
 
 ```jsx
 <Form
-	className="new-todo-wrapper"
-	actionType={addTodo().type}
-	onSubmit={resetOnSubmit}
+  className="new-todo-wrapper"
+  actionType={addTodo().type}
+  onSubmit={resetOnSubmit}
 >
-	<input
-		className="new-todo"
-		name="payload[text]"
-		placeholder="What needs to be done?"
-		autoFocus
-	/>
-	<input type="hidden" name="payload[id]" value={nanoid()} />
+  <input
+    className="new-todo"
+    name="payload[text]"
+    placeholder="What needs to be done?"
+    autoFocus
+  />
+  <input type="hidden" name="payload[id]" value={nanoid()} />
 </Form>
 ```
 
@@ -140,14 +140,14 @@ Note: As with `Form`, you cannot specify both `action` AND `actionCreator`.
 
 ```jsx
 <Button
-	className="btn"
-	actionCreator={fetchBooks}
-	disabled={!nextUrl}
-	payload={{
-		url: nextUrl,
-	}}
+  className="btn"
+  actionCreator={fetchBooks}
+  disabled={!nextUrl}
+  payload={{
+    url: nextUrl,
+  }}
 >
-	Next page
+  Next page
 </Button>
 ```
 
@@ -169,17 +169,17 @@ import handleServerActions from '@wishy-gift/noscript/dist/utils/handleServerAct
 
 ```ts
 type HandleServerActionsParams = {
-	data: Data; // one of these must be provided
-	rawBody: string; // one of these must be provided
-	getReduxStore: (state: any) => ReturnType<typeof configureStore>;
+  data: Data; // one of these must be provided
+  rawBody: string; // one of these must be provided
+  getReduxStore: (state: any) => ReturnType<typeof configureStore>;
 };
 
 type Data = {
-	actionType?: string;
-	actionCreatorName?: string;
-	payloadType: 'string' | 'object' | 'json';
-	state?: string;
-	payload?: any;
+  actionType?: string;
+  actionCreatorName?: string;
+  payloadType: 'string' | 'object' | 'json';
+  state?: string;
+  payload?: any;
 };
 ```
 
@@ -190,11 +190,11 @@ const rawBody = req.read().toString();
 // const data = qs.parse(rawBody);
 
 const result = await handleServerActions({
-	rawBody,
-	// data, // if pre-parsed
-	getReduxStore: (state) => {
-		return getStore(state, isServer);
-	},
+  rawBody,
+  // data, // if pre-parsed
+  getReduxStore: (state) => {
+    return getStore(state, isServer);
+  },
 });
 
 const { reduxStore, state } = result;
@@ -215,7 +215,7 @@ import { addActionCreators } from '@wishy-gift/noscript/dist/utils/actionCreator
 ```ts
 // Basically the signature of an `AsyncThunk` created with `createAsyncThunk`
 type SimpleActionCreator = Function & {
-	typePrefix?: string;
+  typePrefix?: string;
 };
 ```
 
@@ -250,9 +250,9 @@ varName?: string; // defaults to 'payload'
 
 ```js
 const MyInput = () => {
-	const payloadProxy = usePayloadProxy('payload'); // 'payload' is default
+  const payloadProxy = usePayloadProxy('payload'); // 'payload' is default
 
-	return <input name={payloadProxy.foo.bar} value="baz" type="text" />;
+  return <input name={payloadProxy.foo.bar} value="baz" type="text" />;
 };
 ```
 
