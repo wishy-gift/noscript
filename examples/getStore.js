@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import counterReducer from '../features/counter/counterSlice';
-import gutenbergReducer from '../features/gutenberg/gutenbergSlice';
-import todosReducer from '../features/todos/todosSlice';
+import counterReducer from './counter/counterSlice';
+import gutenbergReducer from './gutenberg/gutenbergSlice';
+import todosReducer from './todos/todosSlice';
 
 let store;
 
