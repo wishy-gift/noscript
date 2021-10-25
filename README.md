@@ -75,12 +75,14 @@ import Form from '@wishy-gift/noscript/dist/components/Form';
 #### Props
 
 ```ts
-actionType?: string; // `type` to dispatch
-actionCreator?: string | Function; // function or name of function. see section about actionCreators below
-children: ReactNode;
-className?: string;
-onSubmit?: Function; // optional function to call on submit. NOTE: Actions are dispatched for you
-payloadType?: 'string' | 'object' | 'json'; // default is 'object' which means you can use array notation like payload[foo][bar]
+interface FormProps {
+  actionType?: string; // `type` to dispatch
+  actionCreator?: string | Function; // function or name of function. see section about actionCreators below
+  children: ReactNode;
+  className?: string;
+  onSubmit?: Function; // optional function to call on submit. NOTE: Actions are dispatched for you
+  payloadType?: 'string' | 'object' | 'json'; // default is 'object' which means you can use array notation like payload[foo][bar]
+}
 ```
 
 Note: You cannot specify both `actionType` AND `actionCreator`, but you can also omit passing any of them as props, instead opting to render it to the DOM like this:
@@ -120,18 +122,19 @@ import Button from '@wishy-gift/noscript/dist/components/Button';
 #### Props
 
 ```ts
-
-wrapperClassName?: string; // className to <Form>
-wrapperParams?: object; // spread to <Form>
-className?: string; // className for <button>
-action?: {
-  type: string;
-  payload?: any; // will be stringifed and rendered to DOM if `payload` isn't provided
-};
-actionCreator?: string | Function; // function or name of function. see section about actionCreators below
-payload?: any; // will be stringifed and rendered to DOM if provided
-children: ReactNode;
-onSubmit?: Function; // optional function to call on submit. NOTE: Actions are dispatched for you
+interface ButtonProps {
+  wrapperClassName?: string; // className to <Form>
+  wrapperParams?: object; // spread to <Form>
+  className?: string; // className for <button>
+  action?: {
+    type: string;
+    payload?: any; // will be stringifed and rendered to DOM if `payload` isn't provided
+  };
+  actionCreator?: string | Function; // function or name of function. see section about actionCreators below
+  payload?: any; // will be stringifed and rendered to DOM if provided
+  children: ReactNode;
+  onSubmit?: Function; // optional function to call on submit. NOTE: Actions are dispatched for you
+}
 ```
 
 Note: As with `Form`, you cannot specify both `action` AND `actionCreator`.
