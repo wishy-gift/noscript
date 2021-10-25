@@ -6,14 +6,14 @@ interface ButtonProps {
 	wrapperClassName?: string;
 	wrapperParams?: object;
 	className?: string;
-	action: {
+	action?: {
 		type: string;
 		payload?: any;
 	};
-	actionCreator: string | Function;
-	payload: any;
+	actionCreator?: string | Function;
+	payload?: any;
 	children: ReactNode;
-	onSubmit: Function;
+	onSubmit?: Function;
 }
 
 const Button = ({

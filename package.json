@@ -6,7 +6,8 @@
 	"scripts": {
 		"prepare": "tsc",
 		"watch": "tsc -w",
-		"release": "standard-version"
+		"release": "standard-version",
+		"toc": "markdown-toc ./README.md"
 	},
 	"repository": {
 		"type": "git",
@@ -27,6 +28,7 @@
 	"author": "Daniel Skogly <daniel@wishy.gift> (https://wishy.gift)",
 	"license": "MIT",
 	"dependencies": {
+		"markdown-toc": "^1.2.0",
 		"qs": "^6.10.1"
 	},
 	"devDependencies": {

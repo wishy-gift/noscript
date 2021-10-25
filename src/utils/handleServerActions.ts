@@ -11,9 +11,9 @@ type Data = {
 	payload?: any;
 };
 
-type ServerActionsParams = {
-	data: Data;
-	rawBody: string;
+type HandleServerActionsParams = {
+	data?: Data;
+	rawBody?: string;
 	getReduxStore: (state: any) => ReturnType<typeof configureStore>;
 };
 
@@ -21,7 +21,7 @@ const handleServerActions = async ({
 	data: preParsedData, // if pre-parsed
 	rawBody, // if not pre-parsed
 	getReduxStore,
-}: ServerActionsParams) => {
+}: HandleServerActionsParams) => {
 	if (typeof getReduxStore !== 'function') {
 		console.error(`Missing getReduxStore`);
 		throw new Error(`Missing getReduxStore`);
