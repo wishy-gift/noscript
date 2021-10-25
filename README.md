@@ -1,3 +1,6 @@
+[![npm](https://img.shields.io/npm/v/@wishy-gift/noscript)](https://www.npmjs.com/package/@wishy-gift/noscript)
+[![npm](https://img.shields.io/npm/dw/@wishy-gift/noscript)](https://www.npmjs.com/package/@wishy-gift/noscript)
+
 # @wishy-gift/noscript
 
 ## Table of Contents
