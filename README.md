@@ -41,7 +41,7 @@ In short, by leveraging the similarities of form events and an event based state
 
 Instead of directly dispatching actions, we serialize the action type/creator and payload in the form body itself. The helpers in this package is meant to make this task easier.
 
-More details on this can be found in ["Using React, Redux and SSR to acommodate users without JavaScript"](https://blog.klungo.no/2020/05/28/using-react-and-redux-to-acommodate-users-without-javascript/), or this talk from React Advanced 2021 (soon™)
+More details on this can be found in ["Using React, Redux and SSR to acommodate users without JavaScript"](https://blog.klungo.no/2020/05/28/using-react-and-redux-to-acommodate-users-without-javascript/), or [this talk from React Advanced 2021](https://youtu.be/3yY-Z-X3xE4?t=19).
 
 ## Installation
 
